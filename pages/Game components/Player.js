@@ -38,6 +38,7 @@ function Player(props) {
   this.id = Math.floor(Math.random() * 1000000);
   this.keys = p.keys;
   this.needsToReload = p.needsToReload;
+  this.type = p.type;
 
   // Drawing info
   this.ctx = p.ctx;
@@ -45,7 +46,7 @@ function Player(props) {
   this.sy = p.sy;
   this.playerSprite = new Image();
   this.playerSprite.onload = function () {};
-  this.playerSprite.src = "/Male1.png";
+  this.playerSprite.src = this.type == "main" ? "/Male1.png" : "/Male2.png";
 
   this.resetClippingX = function () {
     if (

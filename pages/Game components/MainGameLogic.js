@@ -1,6 +1,6 @@
 import Player from "./Player";
 
-export function createPlayerObject(ctx) {
+export function createPlayerObject(type, ctx) {
   return new Player({
     healthMax: 100,
     health: 100,
@@ -18,6 +18,7 @@ export function createPlayerObject(ctx) {
     keys: { up: "w", left: "a", down: "s", right: "d", shoot: " ", reload: "r" },
     needsToReload: false,
     ctx: ctx,
+    type: type,
     sx: 0,
     sy: 0,
   });
